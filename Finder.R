@@ -3,8 +3,6 @@ require(moments)
 
 #read .csv file into dataframe "MyData"
 MyData <- read.csv(file = "Data2.csv", header=TRUE, sep=";", dec=",")
-# Create new column with DateTime in POSIX-format
-#MyData$PDT <- as.POSIXct(MyData$DateTime, format = "%d.%M.%Y %H:%M:%S")
 #Show the table MyData
 glimpse(MyData)
 
@@ -110,12 +108,12 @@ anomalyEntries <- function(Dataframe)
   return(Dataframe)
 }
 
-#AData$AThirdData <- AThirdData
-#AData$AFourthData <- AFourthData
-#AData$AFifthData <- AFifthData
-#AData$ASixthData <- ASixthData
-#AData$ASeventhData <- ASeventhData
-#AData$AEighthData <- AEighthData
+AData$AThirdData <- AThirdData
+AData$AFourthData <- AFourthData
+AData$AFifthData <- AFifthData
+AData$ASixthData <- ASixthData
+AData$ASeventhData <- ASeventhData
+AData$AEighthData <- AEighthData
 
 #Calculate complex anomalies in AData dataframe
 AData<-anomalyentries(AData)
@@ -157,13 +155,3 @@ complexPlotting <- function(date, column, anomalyColumn, n)
     }
   }
 }
-
-#Counting anomalies
-#m1 <- searching(MyData$FirstData, 2, 10)
-#  for(i in 1:length(m1))
-#  {
-#      if(!is.na(m1[i]))
-#      {
-#        c <- c + 1
-#      }
-#  }
